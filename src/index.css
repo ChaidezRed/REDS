@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Slovic;
+    font-display: swap;
+    src: url("https://yoksel.github.io/variable-fonts/assets/fonts/slovic/Variable/Slovic_Demo_VarGX.ttf") format("truetype");
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.App{
+    height: 100vh;
+}
+.back{
+ background: url("./assets/DesktopHeader_tcm221-476324.jpg");
+}
