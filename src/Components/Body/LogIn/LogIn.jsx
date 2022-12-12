@@ -12,6 +12,8 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {useContext} from "react";
+import {GeneralContext} from "../../GeneralContext.jsx";
 
 function Copyright(props) {
     return (
@@ -51,13 +53,17 @@ const theme = createTheme({
 
 
 export default function SignInSide() {
+    const {login}= useContext(GeneralContext)
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
+        const dat1= {
             email: data.get('email'),
-            password: data.get('password'),
-        });
+                password: data.get('password'),
+        }
+        console.log(dat1)
+       login(dat1)
     };
 
     return (

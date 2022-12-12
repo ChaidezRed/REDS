@@ -1,6 +1,8 @@
 
 import {Link} from "react-router-dom";
 import styled, { css } from 'styled-components'
+import {useContext, useEffect, useState} from "react";
+import {GeneralContext} from "../GeneralContext.jsx";
 
 
 export function Menu({back}) {
@@ -70,16 +72,34 @@ export function Menu({back}) {
     }
   }
 `
+const {
+        setLoginUser,
+    setUserSesion,
+    setToken,cartItems} = useContext(GeneralContext)
+    const [productsLength, setProductsLength] = useState(0)
+
+    useEffect(() => {
+        setProductsLength(
+            cartItems.reduce((previous, current) => previous +current.amount, 0)
+        );
+    }, [cartItems]);
+
+
+
     return (
         <>
             <MenuBody >
-              <h1 className="title"><Link to={"/"}>REDS</Link> </h1>
+              <h1 className="title"><Link to={"/Home"}>REDS</Link> </h1>
               <div className="menu">
                   <Link to={"/Tenis"}>Tenis</Link>
                   <Link to={"/Hoods"}>Sueters</Link>
                   <Link to={"/Shirts"}>Playeras</Link>
               </div>
-                <Link to={"/LogIn"}>Inicio de Sesion</Link>
+                <Link to={"/"} onClick={() => {
+                    setUserSesion([])
+                    setLoginUser(false)
+                    setToken("")}}>Cerrar Sesion</Link>
+                <Link to={"/shopping"}>Carrito de compras {productsLength}</Link>
             </MenuBody>
 
         </>

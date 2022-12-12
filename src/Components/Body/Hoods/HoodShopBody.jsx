@@ -11,7 +11,5 @@ export default function HoodShopBody() {
                 <HoodData></HoodData>
             </Container>
         </HoodStyle>
-
-
     );
 }

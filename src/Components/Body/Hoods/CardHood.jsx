@@ -7,7 +7,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Hood from "../../../assets/sueter.png"
 
-export default function MediaCard() {
+export default function MediaCard({data}) {
+    const {cakePicture,description,name,price} = data
     return (
         <Card sx={{ maxWidth: 400,
                     padding: 5
@@ -16,20 +17,20 @@ export default function MediaCard() {
                 textAlign="center"
                 gutterBottom variant="h5"
                 component="div">
-                Nombre del Sueter
+                {name}
             </Typography>
             <CardMedia sx={{
                 objectFit:"contain"
             }}
                 component="img"
                 height="280"
-                image={Hood}
+                image={cakePicture}
                 alt="TenisProducto"
             />
             <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
+                <Typography textAlign="center" variant="body2" color="text.secondary">
+                    {description}
+                    <Typography textAlign="center" >{price}</Typography>
                 </Typography>
             </CardContent>
         </Card>

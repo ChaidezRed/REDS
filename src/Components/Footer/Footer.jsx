@@ -2,13 +2,14 @@ import {Footerbody} from "./FooterStyle";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import {Link} from "react-router-dom";
 
 export function Footer() {
     return (
         <>
         <Footerbody>
             <div className="main">
-                <h3>REDS</h3>
+                <Link to={"/products"}><h3>REDS</h3></Link>
                 <h4>Nosotros creamos posibilidades para conectar al mundo</h4>
             </div>
             <div className="second">

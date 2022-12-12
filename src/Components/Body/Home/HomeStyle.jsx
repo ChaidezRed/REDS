@@ -7,6 +7,7 @@ export const HomeBody =styled.section`
   background-size: cover;
   padding: 15%;
   box-sizing: border-box;
+  height: 100vh;
   .content{
     display: flex;
     flex-direction: column;
